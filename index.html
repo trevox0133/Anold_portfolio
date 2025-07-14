@@ -128,6 +128,25 @@
             z-index: -1;
         }
         
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top; /* Adjust image position inside the circle */
+    border: 3px solid var(--primary);
+    margin-top: 20px; /* Move image slightly down */
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+}
+
+        
+        
         .header-content h1 {
             font-size: 4rem;
             margin-bottom: 20px;
@@ -138,6 +157,12 @@
             font-size: 1.5rem;
             max-width: 800px;
             margin: 0 auto 30px;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
         
         .typing-text {
@@ -517,9 +542,20 @@
             letter-spacing: 1px;
         }
         
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 255, 157, 0.3);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--dark);
         }
         
         /* Footer */
@@ -654,6 +690,11 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         
         @media screen and (max-width: 480px) {
@@ -693,9 +734,15 @@
     <!-- Header -->
     <header id="home">
         <div class="header-content">
+            <img src="image.jpg.jpg" alt="Anold Tweve" class="profile-pic">
             <h1 class="glitch" data-text="ANOLD TWEVE">ANOLD TWEVE</h1>
             <p class="typing-text">Computer Network & Information Security Engineer</p>
-            <a href="#contact" class="btn">Get In Touch</a>
+            <div class="header-buttons">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="Anold Tweve cv.pdf" download="Anold_Tweve_CV.pdf" class="btn btn-outline">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
         </div>
         <div class="scroll-down">
             <i class="fas fa-chevron-down"></i>
@@ -709,9 +756,9 @@
             <div class="about-text">
                 <div class="terminal">
                     <p>Hello World!</p>
-                    <p>I'm Anold Yuda Tweve, a detail-oriented Computer Network & Information Security Engineering student graduating in 2025.</p>
+                    <p>I'm Anold Yuda Tweve, a detail-oriented Computer Network & Information Security Engineering student graduating in 2025 from the University of Dodoma.</p>
                     <p>I have hands-on experience in network infrastructure, cybersecurity, data analysis, and virtual assistance. Certified by IBM and ALX Africa, with practical training from TTCL (Tanzania Telecommunications Corporation), Power and Network Backup LTD, and WI-FI Plus Solution.</p>
-                    <p>I'm passionate about applying technical skills to solve real-world security challenges and build robust network systems.</p>
+                    <p>My technical skills include computer networking, information security, server administration, data analysis, SQL, and Python. I'm passionate about applying technical skills to solve real-world security challenges and build robust network systems.</p>
                 </div>
             </div>
             <div class="about-skills">
@@ -727,11 +774,19 @@
                     </div>
                     <div class="skill-item">
                         <h4>Data Analysis</h4>
-                        <p>Data cleaning, visualization, and dashboard creation</p>
+                        <p>Data cleaning, visualization, and dashboard creation with Power BI</p>
                     </div>
                     <div class="skill-item">
                         <h4>Technical Support</h4>
                         <p>IT support, system administration, and troubleshooting</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Programming</h4>
+                        <p>Python, SQL for data analysis and automation</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Soft Skills</h4>
+                        <p>Problem-solving, team collaboration, technical documentation</p>
                     </div>
                 </div>
             </div>
@@ -800,14 +855,15 @@
             </div>
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sales Dashboard">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sales Dashboard">
                 </div>
                 <div class="project-info">
                     <h3>Sales Dashboard for Retail Store</h3>
-                    <p>Interactive Power BI dashboard for retail analytics, featuring data cleaning, visualization, and predictive sales trends.</p>
+                    <p>Interactive Power BI dashboard for retail analytics, featuring data cleaning, visualization, and predictive sales trends using Python and Excel.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Power BI</span>
                         <span class="tech-tag">Excel</span>
+                        <span class="tech-tag">Python</span>
                         <span class="tech-tag">Data Analysis</span>
                     </div>
                     <div class="project-links">
@@ -817,7 +873,7 @@
             </div>
             <div class="project-card">
                 <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Network Security">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Network Security">
                 </div>
                 <div class="project-info">
                     <h3>Enterprise Network Security Framework</h3>
@@ -826,6 +882,7 @@
                         <span class="tech-tag">Cisco</span>
                         <span class="tech-tag">Firewalls</span>
                         <span class="tech-tag">IDS/IPS</span>
+                        <span class="tech-tag">Network Security</span>
                     </div>
                     <div class="project-links">
                         <a href="#"><i class="fas fa-external-link-alt"></i> View Project</a>
@@ -876,6 +933,15 @@
                         <p>linkedin.com/in/anold-tweve-a62298310</p>
                     </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <h4>Portfolio</h4>
+                        <p>https://anold-portfolio.netlify.app/</p>
+                    </div>
+                </div>
             </div>
             <div class="contact-form">
                 <form id="contactForm">
@@ -905,11 +971,11 @@
     <footer>
         <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="linkedin.com/in/anold-tweve-a62298310" class="social-link"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
         </div>
-        <p class="copyright">&copy; 2023 Anold Tweve. All Rights Reserved.</p>
+        <p class="copyright">&copy; 2024 Anold Tweve. All Rights Reserved.</p>
     </footer>
     
     <script>
@@ -1010,7 +1076,8 @@
             'Computer Network Engineer',
             'Information Security Specialist',
             'Data Analyst',
-            'IT Support Professional'
+            'IT Support Professional',
+            'Cybersecurity Enthusiast'
         ];
         let phraseIndex = 0;
         let charIndex = 0;
